@@ -21,6 +21,7 @@ Now set for both apps these options:
 * Force HTTPS
 
 Adjust the domain names as you want, and configure the environment variables as follow:
+* `ALLOWED_HOSTNAMES`: `"${YOUR_DOMAIN}"` _(format is strict, quotes are required because it can be a list like `"aaa.com","bbb.com"`)_
 * `BASE_URL`: `https://${YOUR_DOMAIN}`
 * `CALENDSO_ENCRYPTION_KEY`: [SECRET]
 * `CC_CACHE_DEPENDENCIES`: `true`
