@@ -1,5 +1,5 @@
 import { dir } from "i18next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { headers, cookies } from "next/headers";
 import Script from "next/script";
@@ -12,7 +12,8 @@ import { prepareRootMetadata } from "@lib/metadata";
 
 import "../styles/globals.css";
 
-const interFont = Inter({ subsets: ["latin"], variable: "--font-inter", preload: true, display: "swap" });
+// // Disabled due to failing build pipeline ("Failed to fetch `Inter` from Google Fonts." with "errno: 'ETIMEDOUT'", all the time)
+// const interFont = Inter({ subsets: ["latin"], variable: "--font-inter", preload: true, display: "swap" });
 const calFont = localFont({
   src: "../fonts/CalSans-SemiBold.woff2",
   variable: "--font-cal",
@@ -78,7 +79,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         )}
         <style>{`
           :root {
-            --font-inter: ${interFont.style.fontFamily.replace(/\'/g, "")};
             --font-cal: ${calFont.style.fontFamily.replace(/\'/g, "")};
           }
         `}</style>
